@@ -6,38 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVEL-2</title>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
     <script src="https://codechangers.com/physics.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script
         src="https://unpkg.com/aframe-fps-look-controls-component/dist/aframe-fps-look-controls-component.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
-
-    <!-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- fog="type: linear; color: #000; far: 10; near: 7" -->
 
 <body>
 
     <!-- MODAL -->
-    <!-- <div class="modal-bg bg-active">
+    <div class="modal-intro-two bg-active">
         <div class="modal">
-            <h1>HEJ</h1>
-            <h4>You have found my beer! Maybe you're more clever than i thought...</h4>
+            <h1>GREAT JOB!</h1>
+            <p>But when you walked towards the door to get the food your flatmate sneezed. Watch out for the virus!
+                <br><br>
+                - Press the space bar -
+            </p>
             <button class="close-btn">NEXT</button>
         </div>
     </div>
-
-    <div class="modal-bg">
-        <div class="modal">
-            <h1>HEJ</h1>
-            <h4>You have found my beer! Maybe you're more clever than i thought...</h4>
-            <button class="next-level-btn">NEXT</button>
-        </div>
-    </div> -->
 
     <a-scene id="myScene" fog="type: linear; color: #000; far: 10; near: 7"
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
@@ -48,7 +39,6 @@
             <a-asset-item id="virus" src="assets/virus.glb"></a-asset-item>
             <a-asset-item id="coronaSound" src="assets/coronavirus.mp3" response-type="arraybuffer"></a-asset-item>
             <a-asset-item id="door" src="assets/door.glb"></a-asset-item>
-            <!-- <a-asset-item id="bulletinBoard" src="assets/Bulletin_board_01.gltf"></a-asset-item> -->
             <a-asset-item id="navmesh" src="assets/navmesh2.gltf"></a-asset-item>
             <a-asset-item id="table" src="assets/table.glb"></a-asset-item>
             <a-asset-item id="boombox" src="assets/boombox.glb"></a-asset-item>
@@ -65,13 +55,6 @@
                 <a-cursor intersection-spawn="event: click; mixin: voxel" material="color: red"></a-cursor>
             </a-entity>
         </a-entity>
-
-
-        <!-- <a-entity movement-controls="speed: 0.15; constrainToNavMesh: true">
-            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true">
-                <a-cursor></a-cursor>
-            </a-entity>
-        </a-entity> -->
 
         <!-- GROUND -->
         <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" position="1.013 0 2.808"
@@ -158,7 +141,7 @@
 </body>
 <script src="https://codechangers.com/camps2019/vr/shoot-partial.js"></script>
 <script src="scripts/shoot.js"></script>
-<script src="scripts/modal.js"></script>
+<script src="scripts/level2.js"></script>
 <script>nextLevel = 'level3.html';</script>
 
 </html>

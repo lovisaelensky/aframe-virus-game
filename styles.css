@@ -1,4 +1,7 @@
-.modal-bg {
+.modal-intro,
+.modal-conversation,
+.modal-intro-two,
+.modal-intro-three {
   position: fixed;
   width: 100%;
   height: 100vh;

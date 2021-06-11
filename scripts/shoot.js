@@ -37,7 +37,5 @@ const shootCollided = (event) => {
 document.onkeydown = (event) => {
   if (event.key == ' ') {
     shoot();
-  } else if (event.key == 'c') {
-    // teleport();
   }
 };

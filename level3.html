@@ -14,20 +14,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- fog="type: linear; color: #000; far: 10; near: 7" -->
-
 <body>
 
     <!-- MODAL-->
-    <div class="modal-bg bg-active">
+    <div class="modal-intro-three bg-active">
         <div class="modal">
             <h1>PUH!</h1>
-            <h4>Now you just need to escape.</h4>
+            <p>Now you just need to find the exit out of this nightmare.</p>
             <button class="close-btn">NEXT</button>
         </div>
     </div>
 
-    <a-scene id="myScene"
+    <a-scene id="myScene" fog="type: linear; color: #000; far: 10; near: 7"
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
 
         <a-assets>
@@ -105,8 +103,9 @@
 
         <!-- INTERIOR -->
         <a-entity gltf-model="#table" position="-6 0 13" scale="0.008 0.008 0.008" rotation="-90 0 0"></a-entity>
-
-        <a-entity gltf-model="#exit" position="6.06264 0.0615 0.46101" scale="0.02 0.02 0.02" rotation="0 45 0">
+        ""
+        <a-entity gltf-model="#exit" class="exit" position="6.06264 0.0615 0.46101" scale="0.02 0.02 0.02"
+            rotation="0 45 0">
         </a-entity>
 
         <a-entity gltf-model="#boombox" position="-6.9064 1.7 13" scale="0.003 0.003 0.003" rotation="0 150 0"
@@ -116,7 +115,7 @@
     </a-scene>
 
 </body>
-<script src="scripts/modal.js"></script>
+<script src="scripts/level3.js"></script>
 <!-- <script>nextLevel = 'level2.html';</script> -->
 
 </html>

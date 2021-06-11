@@ -17,36 +17,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- fog="type: linear; color: #000; far: 10; near: 7" -->
-
 <body>
 
     <!-- MODAL -->
-    <div class="modal-bg bg-active">
+    <div class="modal-intro bg-active">
         <div class="modal">
             <h1>OH NO</h1>
-            <h4>You are infected and can't leave the house. Your food delivery just got here and you need to pick it up
-                before the neighbors dog eats it!</h4>
-            <button class="close-btn">NEXT</button>
+            <p>Your flatmate has got the virus and now you're stuck here! Since you can't go anywhere you've ordered
+                some food that just got delivered. Go and pick it up before the neighbors dog eats it!</p>
+            <button class="close-btn">-></button>
         </div>
     </div>
 
-    <a-scene id="myScene"
+    <div class="modal-conversation">
+        <div class="modal">
+            <h1>HEY</h1>
+            <p>The door is that way!</p>
+            <button class="close-btn-two">OK</button>
+        </div>
+    </div>
+
+    <a-scene id="myScene" fog="type: linear; color: #000; far: 10; near: 7"
         inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
 
         <a-assets>
             <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-            <!-- <img id="grass" src="https://cdn.glitch.com/60055b0c-41c5-49c8-805c-da359f1c3f99%2Fgrass.jpg?1519297817380"> -->
             <img id="white-wall" src="assets/white-wall.jpg">
             <a-asset-item id="virus" src="assets/virus.glb"></a-asset-item>
             <a-asset-item id="coronaSound" src="assets/coronavirus.mp3" response-type="arraybuffer"></a-asset-item>
-            <!-- <a-asset-item id="computer" src="assets/computer.glb"></a-asset-item> -->
             <a-asset-item id="door" src="assets/door.glb"></a-asset-item>
-            <!-- <a-asset-item id="bulletinBoard" src="assets/Bulletin_board_01.gltf"></a-asset-item> -->
             <a-asset-item id="navmesh" src="assets/navmesh2.gltf"></a-asset-item>
             <a-asset-item id="table" src="assets/table.glb"></a-asset-item>
             <a-asset-item id="boombox" src="assets/boombox.glb"></a-asset-item>
             <a-asset-item id="food" src="assets/food.glb"></a-asset-item>
+            <a-asset-item id="guy" src="assets/guy.glb"></a-asset-item>
             <audio id="bg-music" src="/assets/i-have-sinned-creepy-mysterious-free-music-2466.mp3"
                 preload="auto"></audio>
         </a-assets>
@@ -121,21 +125,21 @@
         <!-- INTERIOR -->
         <a-entity gltf-model="#table" position="-6 0 13" scale="0.008 0.008 0.008" rotation="-90 0 0"></a-entity>
 
-        <a-entity gltf-model="#boombox" position="-6.9064 1.7 13" scale="0.003 0.003 0.003" rotation="0 150 0"
-            sound="src: #bg-music; autoplay: true">
+        <a-entity gltf-model="#boombox" position="-6.9064 1.7 13" scale="0.003 0.003 0.003" rotation="0 150 0">
+        </a-entity>
+
+        <a-entity gltf-model="#guy" class="guy" position="6.94644 4.24 -7.58308" scale="1.5 1.5 1.5" rotation="0 -45 0">
         </a-entity>
 
         <a-entity gltf-model="#food" class="food" position="2.23086 -1.23444 18.79435" scale="0.7 0.7 0.7"
-            rotation="0 180 0"
-            animation__rotation="property: scale; easing: linear; to: 0.9 0.9 0.9; startEvents: mouseenter;">
+            rotation="0 180 0" animation__scale="property: scale; to: 1 1 1;  easing: linear; startEvents: mouseenter;">
         </a-entity>
 
     </a-scene>
 
 </body>
 <script src="https://codechangers.com/camps2019/vr/shoot-partial.js"></script>
-<script src="scripts/shoot.js"></script>
-<script src="scripts/modal.js"></script>
+<script src="scripts/level1.js"></script>
 <script>nextLevel = 'level2.html';</script>
 
 </html>
